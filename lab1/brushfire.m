@@ -8,7 +8,8 @@ function [value_map]=brushfire(map)
         [v, h] = find(value_map == label);
         for i = 1 : size(v,1)
             for k = 1 : 8
-                p_n = [v(i),h(i)] + nd(k,:); % neighborhood of the current pixel
+                p_n(1) = v(i) + nd(k,1);
+                p_n(2) = h(i) + nd(k,2);
                 if p_n(1) < 1 || p_n(1) > height || p_n(2) < 1 || p_n(2) > width || value_map(p_n(1), p_n(2)) ~= 0
                     continue;
                 end
