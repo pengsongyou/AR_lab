@@ -1,19 +1,20 @@
-
-
 function [value_map, trajectory]=wavefront(map, start, goal)
+   % Get rid of the situation that users pass column vectors instead of
+   % row ones
    if size(start,1) == 2
        start = start';
    end
    if size(goal,1) == 2
        goal = goal';
    end
+   
    value_map = map;
    [height, width] = size(value_map);
    nd = [-1 -1; -1 0; -1 1; 0 1; 1 1; 1 0; 1 -1; 0 -1];% Neighborhood directions. In this case is 8 neighbors
    %% Generate value_map
-   value_map(goal(1),goal(2)) = 2;
+   value_map(goal(1),goal(2)) = 2; % Initial label for goal points
    q = zeros(height*width,2); % Waiting queue
-   q(1,:) = goal;
+   q(1,:) = goal; 
    lp = 1; % Left moving pointer for queue
    rp = 2; % Right moving pointer for queue
    
@@ -36,8 +37,8 @@ function [value_map, trajectory]=wavefront(map, start, goal)
    nd = [-1 -1; -1 1; 1 1; 1 -1; -1 0; 0 1; 1 0; 0 -1];% Neighborhood directions. First consider skew directions, then horiontal and vertical
                                                        % So we give
                                                        % vertical and
-                                                       % horiontal higher
-                                                       % priorioty
+                                                       % horizontal higher
+                                                       % priority
    while sum(abs(p_c-goal)) ~=0
        for k = 1 : 8
            p_n = p_c + nd(k,:); % neighborhood of the center point

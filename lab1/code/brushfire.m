@@ -5,7 +5,7 @@ function [value_map]=brushfire(map)
     label = 0;
     while nnz(value_map) ~= height*width
         label = label + 1;
-        [v, h] = find(value_map == label);
+        [v, h] = find(value_map == label);% Get all the points of last labels and then start to grow
         for i = 1 : size(v,1)
             for k = 1 : 8
                 p_n(1) = v(i) + nd(k,1);
