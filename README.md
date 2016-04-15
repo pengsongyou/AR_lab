@@ -6,3 +6,5 @@ Lab1 - Brushfire algorithm & Wavefront planner
 Lab2 - Rotational Plane Sweep (RPS) Algorithm
 
 Lab3 - Rapidly-Exploring Random Trees (RRT) Algorithm
+
+Lab4 - A* Algorithm
