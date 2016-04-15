@@ -8,3 +8,9 @@ delta_q = 50;
 p = 0.3;
 k = 10000;
 [vertices,edges,path]=rrt(map,q_start,q_goal,k,delta_q,p);
+
+% Plot all the vertices
+% Plot path
+for i = 1 : length(path)-1
+    plot([vertices(path(i),2),vertices(path(i + 1),2)],[vertices(path(i),1), vertices(path(i + 1), 1)],'r-','LineWidth',1.5);
+end
