@@ -3,7 +3,7 @@ clc;
 close all;
 %%
 % load maze.mat
-load map.mat
+load maze.mat
 colormap=[1 1 1; 0 0 0; 1 0 0; 0 1 0; 0 0 1]; imshow(uint8(map),colormap)
 hold on
 

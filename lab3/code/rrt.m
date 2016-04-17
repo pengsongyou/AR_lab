@@ -68,7 +68,7 @@ while i < k
         continue;
     end
     for j = 1 : 10
-        q_middle = floor(q_near + j * d .* v);
+        q_middle = round(q_near + j * d .* v);
         if map(q_middle(1), q_middle(2)) ~= 0
             ob = 1;
             break;
@@ -83,7 +83,6 @@ while i < k
 end
 
 % Get Path
-
 path = [size(vertices,1)];
 cur = path(1);
 while cur ~= 1
