@@ -8,3 +8,5 @@ Lab2 - Rotational Plane Sweep (RPS) Algorithm
 Lab3 - Rapidly-Exploring Random Trees (RRT) Algorithm
 
 Lab4 - A* Algorithm
+
+Lab5 - Q-Learning 
